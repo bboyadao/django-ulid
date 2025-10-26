@@ -6,7 +6,7 @@ changelog:  ## Build CHANGELOG.md from git/github metadata. Assumes 'CHANGELOG_G
 
 .PHONY: test-install
 test-install:  ## Install dependencies required for local test execution.
-	@pip install -q -r requirements/test.txt
+	@pip3 install -q -r requirements/test.txt
 
 .PHONY: test
 test: test-install  ## Run test suite.
@@ -18,7 +18,7 @@ scan: test-install  ## Run security scan.
 
 .PHONY: tox-install
 tox-install:  ## Install dependencies required for local test execution using tox.
-	@pip install -q -r requirements/tox.txt
+	@pip3 install -q -r requirements/tox.txt
 
 .PHONY: tox
 tox: tox-install  ## Run test suite using tox.
@@ -26,7 +26,7 @@ tox: tox-install  ## Run test suite using tox.
 
 .PHONY: travis-install
 travis-install:  ## Install dependencies for travis-ci.org integration.
-	@pip install -q -r requirements/travis.txt
+	@pip3 install -q -r requirements/travis.txt
 
 .PHONY: travis-before-script
 travis-before-script: travis-install  ## Entry point for travis-ci.org 'before_script' execution.
